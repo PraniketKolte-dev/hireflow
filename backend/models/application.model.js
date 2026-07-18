@@ -13,7 +13,7 @@ const applicationSchema = new mongoose.Schema(
       required: true,
     },
     status: {
-      type: mongoose.Schema.Types.ObjectId,
+      type:String,
       enum: ["pending", "accepted", "rejected"],
       default: "pending",
     },
