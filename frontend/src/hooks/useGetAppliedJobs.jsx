@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 const useGetAppliedJobs = () => {
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     const fetchAppliedJobs = async () => {
       try {
