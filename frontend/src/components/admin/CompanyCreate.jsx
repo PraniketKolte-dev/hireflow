@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -27,13 +27,13 @@ const CompanyCreate = () => {
         },
       );
       if (res?.data?.success) {
-        dispatch(setSingleCompany(res.data.company))
+        dispatch(setSingleCompany(res.data.company));
         toast.success(res.data.message);
         const companyId = res?.data?.company?._id;
         navigate(`/admin/companies/${companyId}`);
       }
     } catch (error) {
-      console.error;
+      console.error(error);
     }
   };
   return (

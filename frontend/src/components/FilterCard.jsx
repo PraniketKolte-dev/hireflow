@@ -26,12 +26,12 @@ const filterData = [
 
 const FilterCard = () => {
   const [selectedValue, setSelectedValue] = useState("");
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
   const changeHandler = (value) => {
     setSelectedValue(value);
   };
   useEffect(() => {
-    disptach(setSearchedQuery(selectedValue));
+    dispatch(setSearchedQuery(selectedValue));
   }, [selectedValue]);
   return (
     <div className="w-full bg-white p-3 rounded-md">

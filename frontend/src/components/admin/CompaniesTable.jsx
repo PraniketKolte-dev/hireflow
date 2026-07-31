@@ -18,7 +18,7 @@ const CompaniesTable = () => {
   const { companies, searchCompanyByText } = useSelector(
     (store) => store.company,
   );
-  const [ filterCompany, setFilterCompany ] = useState(companies);
+  const [filterCompany, setFilterCompany] = useState(companies);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,8 +47,7 @@ const CompaniesTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {
-          filterCompany?.map((company) => (
+          {filterCompany?.map((company) => (
             <tr>
               <TableCell>
                 <Avatar>
