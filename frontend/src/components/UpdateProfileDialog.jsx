@@ -75,30 +75,30 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     <div>
       <Dialog open={open}>
         <DialogContent
-          className="sm:max-w-[425px]"
+          className="sm:max-w-[425px] rounded-2xl bg-white p-6 shadow-2xl border border-gray-100"
           onInteractOutside={() => setOpen(false)}
         >
-          <DialogHeader>
-            <DialogTitle>Update Profile</DialogTitle>
+          <DialogHeader className="mb-2">
+            <DialogTitle className="text-xl font-bold text-gray-900">Update Profile</DialogTitle>
           </DialogHeader>
           <form onSubmit={submitHandler}>
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
+                <Label htmlFor="fullname" className="text-right text-sm font-semibold text-gray-600">
                   Name
                 </Label>
                 <Input
-                  id="name"
-                  name="name"
+                  id="fullname"
+                  name="fullname"
                   type="text"
                   value={input.fullname}
                   onChange={changeEventHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl"
                 />
               </div>
 
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="email" className="text-right">
+                <Label htmlFor="email" className="text-right text-sm font-semibold text-gray-600">
                   Email
                 </Label>
                 <Input
@@ -107,25 +107,25 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                   type="email"
                   value={input.email}
                   onChange={changeEventHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl"
                 />
               </div>
 
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="number" className="text-right">
+                <Label htmlFor="phoneNumber" className="text-right text-sm font-semibold text-gray-600">
                   Number
                 </Label>
                 <Input
-                  id="number"
-                  name="number"
+                  id="phoneNumber"
+                  name="phoneNumber"
                   value={input.phoneNumber}
                   onChange={changeEventHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl"
                 />
               </div>
 
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="bio" className="text-right">
+                <Label htmlFor="bio" className="text-right text-sm font-semibold text-gray-600">
                   Bio
                 </Label>
                 <Input
@@ -133,12 +133,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                   name="bio"
                   value={input.bio}
                   onChange={changeEventHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl"
                 />
               </div>
 
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="skills" className="text-right">
+                <Label htmlFor="skills" className="text-right text-sm font-semibold text-gray-600">
                   Skills
                 </Label>
                 <Input
@@ -146,12 +146,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                   name="skills"
                   value={input.skills}
                   onChange={changeEventHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl"
                 />
               </div>
 
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="file" className="text-right">
+                <Label htmlFor="file" className="text-right text-sm font-semibold text-gray-600">
                   Resume
                 </Label>
                 <Input
@@ -160,20 +160,18 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                   type="file"
                   accept="application/pdf"
                   onChange={fileChangeHandler}
-                  className="col-span-3"
+                  className="col-span-3 border border-gray-250 focus-visible:ring-[#6A38C2]/40 rounded-xl cursor-pointer"
                 />
               </div>
             </div>
-            <DialogFooter>
+            <DialogFooter className="mt-4">
               {loading ? (
-                <Button className="w-full my-4">
-                  {" "}
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
-                  wait{" "}
+                <Button className="w-full bg-[#6A38C2] hover:bg-[#52299a] rounded-xl font-semibold shadow-md py-6 flex items-center justify-center gap-2" disabled>
+                  <Loader2 className="h-5 w-5 animate-spin" /> Please wait
                 </Button>
               ) : (
-                <Button type="submit" className="w-full my-4">
-                  Update
+                <Button type="submit" className="w-full bg-[#6A38C2] hover:bg-[#52299a] rounded-xl font-semibold shadow-md hover:shadow-lg active:scale-95 transition-all duration-200 py-6">
+                  Update Profile
                 </Button>
               )}
             </DialogFooter>

@@ -64,11 +64,11 @@ const JobDescription = () => {
   }, [jobId, dispatch, user?._id]);
 
   return (
-    <div className="max-w-7xl mx-auto my-10">
-      <div className="flex items-center justify-between">
+    <div className="max-w-7xl mx-auto my-10 px-4">
+      <div className="flex flex-col sm:flex-row gap-4 justify-between sm:items-center">
         <div>
-          <h1 className="font-bold text-xl">{singleJob?.title}</h1>
-          <div className="flex items-center gap-2 mt-4">
+          <h1 className="font-bold text-xl md:text-2xl">{singleJob?.title}</h1>
+          <div className="flex flex-wrap items-center gap-2 mt-4">
             <Badge className={"text-blue-700 font-bold"} variant="ghost">
               {singleJob?.position} Positions
             </Badge>
@@ -83,12 +83,12 @@ const JobDescription = () => {
         <Button
           onClick={isApplied ? null : applyJobHandler}
           disabled={isApplied}
-          className={`rounded-lg ${isApplied ? "bg-gray-600 cursor-not-allowed" : "bg-[#7209b7] hover:bg-[#5f32ad]"}`}
+          className={`rounded-lg w-full sm:w-auto ${isApplied ? "bg-gray-600 cursor-not-allowed" : "bg-[#7209b7] hover:bg-[#5f32ad]"}`}
         >
           {isApplied ? "Already Applied" : "Apply Now"}
         </Button>
       </div>
-      <h1 className="border-b-2 border-b-gray-300 font-medium py-4">
+      <h1 className="border-b-2 border-b-gray-300 font-medium py-4 mt-6">
         Job Description
       </h1>
       <div className="my-4">
